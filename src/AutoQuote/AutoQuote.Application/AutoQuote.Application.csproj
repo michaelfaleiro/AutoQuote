@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AutoQuote.Communication\AutoQuote.Communication.csproj" />
+      <ProjectReference Include="..\AutoQuote.Core\AutoQuote.Core.csproj" />
+      <ProjectReference Include="..\AutoQuote.Exceptions\AutoQuote.Exceptions.csproj" />
+      <ProjectReference Include="..\AutoQuote.Infra\AutoQuote.Infra.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.11.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="UseCase\Employees\Update\" />
+    </ItemGroup>
+
+</Project>
