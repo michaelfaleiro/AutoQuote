@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="UseCase\Budgets\Update\" />
       <Folder Include="UseCase\Employees\Update\" />
     </ItemGroup>
 

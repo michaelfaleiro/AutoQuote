@@ -2,7 +2,9 @@ namespace AutoQuote.Core.ValueObject;
 
 public class Vehicle : ValueObject
 {
-    public Vehicle(string plate, string chassis, string renavam, string model, string manufacturer, int year, string color, string engine)
+    public Vehicle(
+        string plate, string chassis, string renavam, string model,
+        string manufacturer, int year, string color, string engine)
     {
         Plate = plate;
         Chassis = chassis;

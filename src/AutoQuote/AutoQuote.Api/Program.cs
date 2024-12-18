@@ -3,11 +3,13 @@ using AutoQuote.Api;
 using AutoQuote.Api.Filters;
 using AutoQuote.Application.Services;
 using AutoQuote.Application.Services.Token;
+using AutoQuote.Core.Repositories.Budgets;
 using AutoQuote.Core.Repositories.Employees;
 using AutoQuote.Core.Repositories.Quotes;
 using AutoQuote.Core.Repositories.RefreshTokens;
 using AutoQuote.Core.Repositories.Suppliers;
 using AutoQuote.Infra.Data;
+using AutoQuote.Infra.Data.Repositories.Budgets;
 using AutoQuote.Infra.Data.Repositories.Employees;
 using AutoQuote.Infra.Data.Repositories.Quotes;
 using AutoQuote.Infra.Data.Repositories.RefreshTokens;
@@ -61,6 +63,7 @@ builder.Services.AddAuthService();
 builder.Services.AddQuoteService();
 builder.Services.AddEmployeeService();
 builder.Services.AddSupplierService();
+builder.Services.AddBudgetService();
 
 builder.Services.AddSingleton<ITokenService>(sp =>
 {
@@ -68,6 +71,7 @@ builder.Services.AddSingleton<ITokenService>(sp =>
     return new TokenService(appSettings.Secret);
 });
 
+builder.Services.AddScoped<IBudgetRepository, BudgetRepository>();
 builder.Services.AddScoped<IQuoteRepository, QuoteRepository>();
 builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
